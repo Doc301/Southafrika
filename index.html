@@ -3,10 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mein Urlaub</title>
+    <title>Urlaubserinnerungen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 50px;
+        }
+        .content {
+            max-width: 800px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .section img {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .section:nth-child(even) .container {
+            flex-direction: row-reverse;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column !important;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Willkommen zu meinen Urlaubserinnerungen!</h1>
-    <p>Hier findest du Fotos und Berichte über meinen letzten Urlaub.</p>
+
+    <div class="section">
+        <div class="container">
+            <img src="bild1.jpg" alt="Urlaub 1">
+            <div class="content">
+                <h2>Tag 1 – Ankunft</h2>
+                <p>Heute sind wir endlich angekommen! Die Sonne scheint, das Meer ist atemberaubend und unser Hotel ist wunderschön.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <img src="bild2.jpg" alt="Urlaub 2">
+            <div class="content">
+                <h2>Tag 2 – Erkundungstour</h2>
+                <p>Wir haben die Stadt erkundet und unglaublich gutes Essen probiert. Die Atmosphäre ist lebendig und die Menschen sind sehr freundlich.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <img src="bild3.jpg" alt="Urlaub 3">
+            <div class="content">
+                <h2>Tag 3 – Abenteuer</h2>
+                <p>Ein Tagesausflug führte uns in die Berge. Atemberaubende Landschaften und eine unvergessliche Wanderung!</p>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
