@@ -15,37 +15,69 @@
             background-color: #f5f5f5;
             color: #333;
         }
+        .header {
+            background: url('header-image.jpg') center/cover no-repeat;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
         .section {
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
             padding: 50px;
         }
+        .content-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            max-width: 1000px;
+            width: 100%;
+        }
         .content {
-            max-width: 800px;
-            padding: 20px;
+            max-width: 500px;
             background: white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
             border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .content h2 {
+            margin-bottom: 10px;
+        }
+        .content p {
+            margin-bottom: 15px;
+        }
+        .content button {
+            background: #ff6600;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
         }
         .section img {
             max-width: 400px;
             width: 100%;
-            height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-        .container {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        .section:nth-child(even) .container {
+        .section:nth-child(even) .content-box {
             flex-direction: row-reverse;
         }
+        .footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
         @media (max-width: 768px) {
-            .container {
+            .content-box {
                 flex-direction: column !important;
                 text-align: center;
             }
@@ -54,34 +86,45 @@
 </head>
 <body>
 
+    <div class="header">
+        Meine Urlaubserinnerungen
+    </div>
+
     <div class="section">
-        <div class="container">
+        <div class="content-box">
             <img src="bild1.jpg" alt="Urlaub 1">
             <div class="content">
                 <h2>Tag 1 – Ankunft</h2>
                 <p>Heute sind wir endlich angekommen! Die Sonne scheint, das Meer ist atemberaubend und unser Hotel ist wunderschön.</p>
+                <button>Mehr erfahren</button>
             </div>
         </div>
     </div>
 
     <div class="section">
-        <div class="container">
+        <div class="content-box">
             <img src="bild2.jpg" alt="Urlaub 2">
             <div class="content">
                 <h2>Tag 2 – Erkundungstour</h2>
                 <p>Wir haben die Stadt erkundet und unglaublich gutes Essen probiert. Die Atmosphäre ist lebendig und die Menschen sind sehr freundlich.</p>
+                <button>Mehr erfahren</button>
             </div>
         </div>
     </div>
 
     <div class="section">
-        <div class="container">
+        <div class="content-box">
             <img src="bild3.jpg" alt="Urlaub 3">
             <div class="content">
                 <h2>Tag 3 – Abenteuer</h2>
                 <p>Ein Tagesausflug führte uns in die Berge. Atemberaubende Landschaften und eine unvergessliche Wanderung!</p>
+                <button>Mehr erfahren</button>
             </div>
         </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Meine Urlaubserinnerungen | Impressum
     </div>
 
 </body>
