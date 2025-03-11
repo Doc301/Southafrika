@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Urlaubserinnerungen</title>
+    <title>Interaktive Urlaubserinnerungen</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -33,6 +35,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
         }
         .background {
             position: absolute;
@@ -52,7 +55,8 @@
             max-width: 500px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            opacity: 0.9;
+            opacity: 0;
+            transform: translateY(50px);
         }
         .section:nth-child(even) .content-box {
             margin-left: auto;
@@ -86,30 +90,62 @@
     <div class="section">
         <div class="background" style="background-image: url('bild1.jpg');"></div>
         <div class="content-box">
-            <h2>Tag 1 – Ankunft</h2>
-            <p>Heute sind wir endlich angekommen! Die Sonne scheint, das Meer ist atemberaubend und unser Hotel ist wunderschön.</p>
+            <h2>Reisebeginn</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec eros eget nisl fringilla commodo.</p>
         </div>
     </div>
 
     <div class="section">
         <div class="background" style="background-image: url('bild2.jpg');"></div>
         <div class="content-box">
-            <h2>Tag 2 – Erkundungstour</h2>
-            <p>Wir haben die Stadt erkundet und unglaublich gutes Essen probiert. Die Atmosphäre ist lebendig und die Menschen sind sehr freundlich.</p>
+            <h2>Erster Tag</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec eros eget nisl fringilla commodo.</p>
         </div>
     </div>
 
     <div class="section">
         <div class="background" style="background-image: url('bild3.jpg');"></div>
         <div class="content-box">
-            <h2>Tag 3 – Abenteuer</h2>
-            <p>Ein Tagesausflug führte uns in die Berge. Atemberaubende Landschaften und eine unvergessliche Wanderung!</p>
+            <h2>Abenteuer</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec eros eget nisl fringilla commodo.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="background" style="background-image: url('bild1.jpg');"></div>
+        <div class="content-box">
+            <h2>Neue Entdeckungen</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec eros eget nisl fringilla commodo.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="background" style="background-image: url('bild2.jpg');"></div>
+        <div class="content-box">
+            <h2>Genuss & Kultur</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec eros eget nisl fringilla commodo.</p>
         </div>
     </div>
 
     <div class="footer">
         &copy; 2024 Meine Urlaubserinnerungen | Impressum
     </div>
+
+    <script>
+        gsap.utils.toArray(".content-box").forEach((box) => {
+            gsap.to(box, {
+                scrollTrigger: {
+                    trigger: box,
+                    start: "top 80%",
+                    toggleActions: "play none none none",
+                },
+                opacity: 1,
+                y: 0,
+                duration: 1.2,
+                ease: "power3.out"
+            });
+        });
+    </script>
 
 </body>
 </html>
